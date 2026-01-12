@@ -1,11 +1,10 @@
-#Use official Python image
-FROM python:3.12-slim
+FROM python:3.13-slim
 
-#Set the working directory 
 WORKDIR /app
 
-#Copy all files to the container
-COPY . .
+COPY emp_details.py .
+COPY requirements.txt .
 
-#command to run python file
-CMD ["python", "emp_details.py"]
+RUN pip install --no-cache-dir -r requirements.txt
+
+CMD ["python", "emp_details.py", "101", "Pothyshwer", "28"]
