@@ -1,4 +1,4 @@
-from employee_details import *
+from emp_details import *
 
 def test_high_salary():
     salary = 60000
