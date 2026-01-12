@@ -1,36 +1,14 @@
-import pytest
 
-from emp_details import salary_category
+from emp import calculate_bonus
 
+def test_bonus_26():
+    assert calculate_bonus(26) == 5000
 
-def test_high_salary():
-    assert salary_category(60000) == "High Salary"
+def test_bonus_20():
+    assert calculate_bonus(20) == 3000
 
+def test_bonus_15():
+    assert calculate_bonus(15) == 1500
 
-def test_medium_salary():
-    assert salary_category(40000) == "Medium Salary"
-
-
-def test_low_salary():
-    assert salary_category(20000) == "Low Salary"
-
-
-@pytest.mark.parametrize("salary, expected", [
-    (50000, "High Salary"),
-    (70000, "High Salary"),
-    (30000, "Medium Salary"),
-    (49999, "Medium Salary"),
-    (25000, "Low Salary"),
-    (0, "Low Salary"),
-])
-def test_salary_boundaries(salary, expected):
-    assert salary_category(salary) == expected
-
-
-def test_negative_salary():
-    # Negative salary should still be considered Low Salary
-    assert salary_category(-5000) == "Low Salary"
-
-
-def test_very_high_salary():
-    assert salary_category(1000000) == "High Salary"
+def test_bonus_10():
+    assert calculate_bonus(10) == 0
