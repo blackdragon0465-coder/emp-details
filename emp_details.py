@@ -1,33 +1,28 @@
-# emp_details.py
 
-def salary_category(salary):
-    if salary >= 50000:
-        return "High Salary"
-    elif salary >= 30000:
-        return "Medium Salary"
+def calculate_bonus(present_days):
+    if present_days >= 26:
+        return 5000
+    elif present_days >= 20:
+        return 3000
+    elif present_days >= 15:
+        return 1500
     else:
-        return "Low Salary"
-
-
-def main():
-    print("=== Employee Management System ===")
-
-    # Static values for CI/CD
-    emp_id = "101"
-    name = "pothyshwer"
-    post = "Manager"
-    salary = 60000
-
-    category = salary_category(salary)
-
-    print("\n----- Employee Report -----")
-    print(f"Employee ID : {emp_id}")
-    print(f"Name        : {name}")
-    print(f"Post        : {post}")
-    print(f"Salary      : {salary}")
-    print(f"Category    : {category}")
-    print("---------------------------")
+        return 0
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+
+    if len(sys.argv) != 4:
+        print("Usage: python emp.py <emp_id> <name> <present_days>")
+    else:
+        emp_id = int(sys.argv[1])
+        name = sys.argv[2]
+        present_days = int(sys.argv[3])
+
+        bonus = calculate_bonus(present_days)
+
+        print("Employee ID:", emp_id)
+        print("Employee Name:", name)
+        print("Present Days:", present_days)
+        print("Bonus:", bonus)
