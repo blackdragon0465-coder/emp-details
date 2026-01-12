@@ -1,10 +1,6 @@
-def get_employee(emp_id, name, post, salary):
-    print("\n------ EMPLOYEE DETAILS ------")
-    print("Employee ID   :", emp_id)
-    print("Name          :", name)
-    print("Post          :", post)
-    print("Salary        :", salary)
+# emp_details.py
 
+def salary_category(salary):
     if salary >= 50000:
         return "High Salary"
     elif salary >= 30000:
@@ -13,12 +9,29 @@ def get_employee(emp_id, name, post, salary):
         return "Low Salary"
 
 
-if __name__ == "__main__":
-    # Jenkins-safe hardcoded values
-    emp_id = "101"
-    name = "Ravi"
-    post = "Manager"
-    salary = 60000
+def main():
+    print("=== Employee Management System ===")
 
-    category = get_employee(emp_id, name, post, salary)
-    print("Category      :", category)
+    emp_id = input("Enter Employee ID: ")
+    name = input("Enter Employee Name: ")
+    post = input("Enter Employee Post: ")
+
+    try:
+        salary = float(input("Enter Employee Salary: "))
+    except ValueError:
+        print("Invalid salary! Please enter numbers only.")
+        return
+
+    category = salary_category(salary)
+
+    print("\n----- Employee Report -----")
+    print(f"Employee ID : {emp_id}")
+    print(f"Name        : {name}")
+    print(f"Post        : {post}")
+    print(f"Salary      : {salary}")
+    print(f"Category    : {category}")
+    print("---------------------------")
+
+
+if __name__ == "__main__":
+    main()
