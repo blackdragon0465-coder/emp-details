@@ -12,15 +12,11 @@ def salary_category(salary):
 def main():
     print("=== Employee Management System ===")
 
-    emp_id = input("Enter Employee ID: ")
-    name = input("Enter Employee Name: ")
-    post = input("Enter Employee Post: ")
-
-    try:
-        salary = float(input("Enter Employee Salary: "))
-    except ValueError:
-        print("Invalid salary! Please enter numbers only.")
-        return
+    # Static values for CI/CD
+    emp_id = "101"
+    name = "Ravi"
+    post = "Manager"
+    salary = 60000
 
     category = salary_category(salary)
 
