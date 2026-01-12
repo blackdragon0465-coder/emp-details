@@ -14,7 +14,7 @@ def main():
 
     # Static values for CI/CD
     emp_id = "101"
-    name = "Ravi"
+    name = "pothyshwer"
     post = "Manager"
     salary = 60000
 
